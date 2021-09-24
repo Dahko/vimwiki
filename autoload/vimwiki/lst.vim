@@ -832,7 +832,7 @@ function! s:rate_to_state(rate) abort
   elseif a:rate == -1
     let state = vimwiki#vars#get_global('listsym_rejected')
   else
-    let index = float2nr(ceil(a:rate/100.0*(n-2)))
+    let index = float2nr(ceil(a:rate/str2float("100.0")*(n-2)))
     let state = listsyms_list[index]
   endif
   return state
